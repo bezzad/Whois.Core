@@ -17,37 +17,39 @@
   <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
-      <div class="container">
-        <a class="navbar-brand rainbow" asp-area="" asp-page="/Index">Whois</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-          <ul class="navbar-nav flex-grow-1">
-@*            <li class="nav-item">*@
-@*              <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>*@
-@*            </li>*@
-@*            <li class="nav-item">*@
-@*              <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>*@
-@*            </li>*@
-          </ul>
-        </div>
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+    <div class="container">
+      <a class="navbar-brand rainbow" asp-area="" asp-page="/Index">Whois</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+        <ul class="navbar-nav flex-grow-1">
+          @*            <li class="nav-item">*@
+          @*              <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>*@
+          @*            </li>*@
+          @*            <li class="nav-item">*@
+          @*              <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>*@
+          @*            </li>*@
+        </ul>
       </div>
-    </nav>
-  </header>
-  <div class="container main-container">
+    </div>
+  </nav>
+</header>
+<div class="main-container">
+  <div class="container">
     <partial name="_CookieConsentPartial" />
     <main role="main" class="pb-3 pt-3">
       @RenderBody()
     </main>
   </div>
+</div>
 
   <footer class="border-top footer text-muted">
     <div class="container">
-      &copy; 2019 - Whois <span style="margin-left: 10px; font-size:11px">powered by bezzad</span>
+      &copy; 2019 - Whois <span style="margin-left: 10px; font-size:11px" class="rainbow">powered by <a href="https://github.com/bezzad" target="_blank">bezzad</a></span>
     </div>
   </footer>
 

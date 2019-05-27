@@ -32,7 +32,11 @@ body {
 }
 
 .main-container {
-  height: calc(100vh - 123px);
+  height: calc(100vh - 131px);
+/*  background: linear-gradient(to top, #81a362 0%, #f9f9f9 100%);*/
+/*  background: linear-gradient(to top, #005e7a 0%, #fafffc 100%);*/
+/*  background: linear-gradient(to top, #d31313c9 0%, #339e07d1 100%);*/
+  background: linear-gradient(to top, #ede155 0%, #ffffff 85%);
 }
 
 @media (min-width: 768px) {
@@ -85,11 +89,11 @@ h1.header {
   width: 300px;
   margin: auto;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .rainbow {
-  text-transform: uppercase;
-  background: linear-gradient(to right, #000 25%, #ffff00 100%);
+  background: linear-gradient(to right, #000 10%, #ffff00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
