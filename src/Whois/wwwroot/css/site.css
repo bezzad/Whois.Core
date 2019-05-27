@@ -46,6 +46,7 @@ body {
 }
 
 .box-shadow {
+  box-shadow: 0 .25rem .75rem #000000;
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
@@ -96,6 +97,12 @@ h1.header {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   line-height: 1.75;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-spacing: normal;
+  word-break: break-all;
+  line-break: auto;
+  max-width: 100%;
 }
 
   .tags-container input {
