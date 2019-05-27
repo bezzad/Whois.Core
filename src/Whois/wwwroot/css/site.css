@@ -17,19 +17,23 @@ body {
   box-sizing: border-box;
 }
 
-  *::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: none;
-  }
+*::-webkit-scrollbar-track {
+  background: none;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 5px;
-  }
+*::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+.main-container {
+  height: calc(100vh - 123px);
+}
 
 @media (min-width: 768px) {
   html {

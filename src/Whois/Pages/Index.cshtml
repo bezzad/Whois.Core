@@ -8,6 +8,15 @@
   <h1 class="display-2 header rainbow">Whois</h1>
   <p>Multiple Domain Name Search</p>
   <input id="tags" data-role='tags-input' value="">
+  <div class="row p-4">
+    @Html.BootstrapCheckbox("chkCom", ".com", true, "col")
+    @Html.BootstrapCheckbox("chkNet", ".net", true, "col")
+    @Html.BootstrapCheckbox("chkIr", ".ir", true, "col")
+    @Html.BootstrapCheckbox("chkOrg", ".org", true, "col")
+    @Html.BootstrapCheckbox("chkCc", ".cc", true, "col")
+    @Html.BootstrapCheckbox("chkInfo", ".info", true, "col")
+  </div>
+
 </div>
 
 @section Scripts
