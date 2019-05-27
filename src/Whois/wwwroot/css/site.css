@@ -17,16 +17,16 @@ body {
   box-sizing: border-box;
 }
 
-  body::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 5px;
     height: 5px;
   }
 
-  body::-webkit-scrollbar-track {
+  *::-webkit-scrollbar-track {
     background: none;
   }
 
-  body::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 5px;
   }
@@ -92,10 +92,6 @@ h1.header {
 
 /*********************** Tag Input ***********************/
 .tags-container {
-  padding-left: 0;
-  height: unset;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
   line-height: 1.75;
   overflow-x: hidden;
   overflow-wrap: break-word;
@@ -103,6 +99,9 @@ h1.header {
   word-break: break-all;
   line-break: auto;
   max-width: 100%;
+  height: auto;
+  max-height: 160px;
+  padding: 0.5em;
 }
 
   .tags-container input {
