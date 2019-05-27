@@ -13,6 +13,24 @@ html {
   font-size: 14px;
 }
 
+body {
+  box-sizing: border-box;
+}
+
+  body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+  }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
