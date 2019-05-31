@@ -32,17 +32,8 @@ body {
 }
 
 .main-container {
-  height: calc(100vh - 131px);
-/*  background: linear-gradient(to top, #81a362 0%, #f9f9f9 100%);*/
-/*  background: linear-gradient(to top, #005e7a 0%, #fafffc 100%);*/
-/*  background: linear-gradient(to top, #d31313c9 0%, #339e07d1 100%);*/
-  background: linear-gradient(to top, #ede155 0%, #ffffff 85%);
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+  height: calc(100vh - 123px);
+  background: linear-gradient(to top, #ede155 0.1%, #ffffff 85%);
 }
 
 .border-top {
@@ -68,6 +59,7 @@ button.accept-policy {
 html {
   position: relative;
   min-height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -96,6 +88,10 @@ h1.header {
   background: linear-gradient(to right, #000 10%, #ffff00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.hide {
+  display: none;
 }
 
 /*********************** Tag Input ***********************/
