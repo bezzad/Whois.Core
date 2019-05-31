@@ -8,16 +8,6 @@
   <h1 class="display-2 header rainbow">Whois</h1>
   <p>Multiple Domain Name Search</p>
   <input id="tags" data-role='tags-input' value="">
-  <div id="setting-popover-content" class="hide">
-    <div class="row py-2 px-5">
-      @Html.BootstrapCheckbox("chkCom", ".com", true, "col-4")
-      @Html.BootstrapCheckbox("chkNet", ".net", true, "col-4")
-      @Html.BootstrapCheckbox("chkIr", ".ir", true, "col-4")
-      @Html.BootstrapCheckbox("chkOrg", ".org", true, "col-4")
-      @Html.BootstrapCheckbox("chkCc", ".cc", true, "col-4")
-      @Html.BootstrapCheckbox("chkInfo", ".info", true, "col-4")
-    </div>
-  </div>
 
   <div class="btn-group btn-group-lg pt-3" role="group" data-toggle="buttons" id="xxx">
     <button class="btn btn-secondary" data-toggle="popover">
@@ -25,9 +15,7 @@
         <svg width="32" height="32" viewBox="0 0 14 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"></path></svg>
       </span>
     </button>
-    <button class="btn btn-secondary">
-      Search
-    </button>
+    <button class="btn btn-secondary">Search</button>
   </div>
 </div>
 
@@ -44,16 +32,31 @@
         title: "Select Domain Name Suffix",
         content: "Please Wait..."
       });
-      $("[data-toggle=popover]").on('shown.bs.popover', function () {
-        // Please Don't replace this by `content` property of popover.option
-        // becase that can't render checkboxes
-        if (window.settingHtml == null) {
-          window.settingHtml = $("#setting-popover-content").html();
-          $("#setting-popover-content").html("");
-        }
-        $(".popover-body").html(settingHtml);
-      });
+      $("[data-toggle=popover]").on('shown.bs.popover',
+        function () {
+          // Please Don't replace this by `content` property of popover.option
+          // becase that can't render checkboxes
 
+          getObject("setting",
+            opt => {
+              if (!opt.data) opt.data = { org: true, net: true, ir: true, cc: true, info: true, com: true };
+              var settingHtml = '<div class="row py-2 px-5">';
+              Object.keys(opt.data).forEach(key => {
+                settingHtml += getCheckbox(key, "." + key, opt.data[key], "col-4");
+              });
+              settingHtml += "</div>";
+
+              $(".popover-body").html(settingHtml);
+              $("input[type=checkbox]").on("change",
+                e => {
+                  getObject("setting",
+                    o => {
+                      o.data[e.target.id] = e.target.checked;
+                      console.log("setting", o);
+                    });
+                });
+            });
+        });
     });
   </script>
 }
